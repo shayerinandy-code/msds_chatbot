@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://elogixmail.com/webmail/?_task=mail&_mbox=INBOX -->
+<html lang="en" class="js chrome webkit layout-large"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Webuzo Email :: Inbox</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0"><meta name="theme-color" content="#f4f4f4"><meta name="msapplication-navbutton-color" content="#f4f4f4">
+	<link rel="shortcut icon" href="./Sample SDS Handout_files/webuzo_icon_64.png">
+	<link rel="stylesheet" href="./Sample SDS Handout_files/bootstrap.min.css">
+	
+		<link rel="stylesheet" href="./Sample SDS Handout_files/styles.min.css">
+		
+	
+	
+		<script>
+		try {
+			if (document.cookie.indexOf('colorMode=dark') > -1
+				|| (document.cookie.indexOf('colorMode=light') === -1 && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			) {
+				document.documentElement.className += ' dark-mode';
+			}
+		} catch (e) { }
+		</script>
+	
+<link rel="stylesheet" type="text/css" href="./Sample SDS Handout_files/jquery-ui.min.css"><link rel="stylesheet" type="text/css" href="./Sample SDS Handout_files/libkolab.min.css"><script src="./Sample SDS Handout_files/jquery.min.js.download"></script><script src="./Sample SDS Handout_files/common.min.js.download"></script><script src="./Sample SDS Handout_files/app.min.js.download"></script><script src="./Sample SDS Handout_files/treelist.min.js.download"></script><script src="./Sample SDS Handout_files/list.min.js.download"></script><script>
+/*
+        @licstart  The following is the entire license notice for the 
+        JavaScript code in this page.
+
+        Copyright (C) The Roundcube Dev Team
+
+        The JavaScript code in this page is free software: you can redistribute
+        it and/or modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation, either version 3 of
+        the License, or (at your option) any later version.
+
+        The code is distributed WITHOUT ANY WARRANTY; without even the implied
+        warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        See the GNU GPL for more details.
+
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+var rcmail = new rcube_webmail();
+rcmail.set_env({"task":"mail","standard_windows":false,"locale":"en_US","devel_mode":null,"rcversion":10611,"cookie_domain":"","cookie_path":"/","cookie_secure":false,"dark_mode_support":true,"skin":"elastic","blankpage":"skins/elastic/watermark.html","refresh_interval":60,"session_lifetime":600,"action":"","comm_path":"./?_task=mail","user_id":"R1IN0fD6eCZceyK2","compose_extwin":false,"archive_folder":"INBOX.Archive","archive_type":"","markasjunk_ham_mailbox":"INBOX","markasjunk_spam_mailbox":"INBOX.spam","markasjunk_move_spam":false,"markasjunk_move_ham":false,"markasjunk_permanently_remove":false,"markasjunk_spam_only":false,"date_format":"yy-mm-dd","date_format_localized":"YYYY-MM-DD","calendar_settings":{"default_view":"agendaWeek","timeslots":2,"first_day":1,"first_hour":6,"work_start":6,"work_end":18,"agenda_range":60,"event_coloring":0,"time_indicator":1,"invite_shared":0,"itip_notify":3,"show_weekno":0,"default_calendar":null,"invitation_calendars":false},"libcal_settings":{"date_format":"YYYY-MM-DD","time_format":"HH:mm","date_short":"MM-DD","date_long":"DD MMM YYYY","date_agenda":"dddd MM-DD","dates_long":"DD MMM YYYY","first_day":1,"timezone":5.5,"dst":"0","days":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"days_short":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"months_short":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"today":"Today"},"search_mods":{"*":{"subject":1,"from":1},"INBOX.Sent":{"subject":1,"to":1},"INBOX.Drafts":{"subject":1,"to":1}},"mailbox":"INBOX","pagesize":50,"current_page":1,"delimiter":".","threading":false,"threads":true,"reply_all_mode":0,"layout":"widescreen","quota":true,"drafts_mailbox":"INBOX.Drafts","trash_mailbox":"INBOX.Trash","junk_mailbox":"INBOX.spam","read_when_deleted":true,"display_next":true,"additional_logos":{"dark":"webuzo_icon_64.png","small":"webuzo_icon_64.png","small-dark":"webuzo_icon_64.png"},"unreadwrap":"%s","collapsed_folders":"","mailboxes":{"INBOX":{"id":"INBOX","name":"Inbox","virtual":false,"class":"inbox"},"INBOX.Drafts":{"id":"INBOX.Drafts","name":"Drafts","virtual":false,"class":"drafts"},"INBOX.Sent":{"id":"INBOX.Sent","name":"Sent","virtual":false,"class":"sent"},"INBOX.spam":{"id":"INBOX.spam","name":"Junk","virtual":false,"class":"junk"},"INBOX.Trash":{"id":"INBOX.Trash","name":"Trash","virtual":false,"class":"trash"}},"mailboxes_list":["INBOX","INBOX.Drafts","INBOX.Sent","INBOX.spam","INBOX.Trash"],"col_movable":true,"autoexpand_threads":0,"sort_col":"","sort_order":"DESC","messages":[],"listcols":["threads","subject","status","fromto","date","size","flag","attachment"],"listcols_widescreen":["threads","subject","fromto","date","size","flag","attachment"],"disabled_sort_col":false,"disabled_sort_order":false,"coltypes":{"threads":{"className":"threads","id":"rcmthreads","label":"","sortable":false},"subject":{"className":"subject","id":"rcmsubject","label":"Subject","sortable":true},"status":{"className":"status","id":"rcmstatus","label":"","sortable":false},"fromto":{"className":"fromto","id":"rcmfromto","label":"From","sortable":true},"date":{"className":"date","id":"rcmdate","label":"Date","sortable":true},"size":{"className":"size","id":"rcmsize","label":"Size","sortable":true},"flag":{"className":"flag","id":"rcmflag","label":"","sortable":false},"attachment":{"className":"attachment","id":"rcmattachment","label":"","sortable":false}},"max_filesize":134217728,"filesizeerror":"The uploaded file exceeds the maximum size of 128 MB.","max_filecount":"20","filecounterror":"You can upload maximum 20 files at once.","contentframe":"messagecontframe","request_token":"Yh7jTZ6lavQUcWZdDnivEBhRchHETl7V"});
+rcmail.add_label({"loading":"Loading...","servererror":"Server Error!","connerror":"Connection Error (Failed to reach the server)!","requesttimedout":"Request timed out","refreshing":"Refreshing...","windowopenerror":"The popup window was blocked!","uploadingmany":"Uploading files...","uploading":"Uploading file...","close":"Close","save":"Save","cancel":"Cancel","alerttitle":"Attention","confirmationtitle":"Are you sure...","delete":"Delete","continue":"Continue","ok":"OK","archive.buttontext":"Archive","archive.buttontitle":"Archive this message","archive.archived":"Successfully archived","archive.archivedreload":"Successfully archived. Reload the page to see the new archive folders.","archive.archiveerror":"Some messages could not be archived","archive.archivefolder":"Archive","archive.settingstitle":"Archive","archive.archivetype":"Divide archive by","archive.archivetypeyear":"Year (e.g. Archive/2012)","archive.archivetypemonth":"Month (e.g. Archive/2012/06)","archive.archivetypetbmonth":"Month - Thunderbird compatible (e.g. Archive/2012/2012-06)","archive.archivetypefolder":"Original folder","archive.archivetypefolderyear":"Year and the original folder (e.g. Archive/2012/...)","archive.archivetypefoldermonth":"Year, month and the original folder (e.g. Archive/2012/06/...)","archive.archivetypesender":"Sender email","archive.unkownsender":"unknown","archive.readonarchive":"Mark the message as read on archive","markasjunk.buttonjunk":"This message is junk","markasjunk.asjunk":"As junk","markasjunk.markasjunk":"Mark as junk","markasjunk.buttonnotjunk":"This message is not junk","markasjunk.asnotjunk":"As not junk","markasjunk.markasnotjunk":"Mark as not junk","markasjunk.notjunk":"Not junk","markasjunk.reportedasjunk":"Successfully reported as junk","markasjunk.reportedasnotjunk":"Successfully reported as not junk","newmail_notifier.title":"New Email!","newmail_notifier.body":"You've received a new message.","zipdownload.download":"Download...","calendar.createfrommail":"Save as event","libcalendaring.itipaccepted":"Accept","libcalendaring.itiptentative":"Maybe","libcalendaring.itipdeclined":"Decline","libcalendaring.itipdelegated":"Delegate","libcalendaring.expandattendeegroup":"Substitute with group members","libcalendaring.expandattendeegroupnodata":"Unable to substitute this group. No members found.","libcalendaring.statusorganizer":"Organizer","libcalendaring.statusaccepted":"Accepted","libcalendaring.statusdeclined":"Declined","libcalendaring.statusdelegated":"Delegated","libcalendaring.statusunknown":"Unknown","libcalendaring.statusneeds-action":"Needs action","libcalendaring.statustentative":"Tentative","libcalendaring.statuscompleted":"Completed","libcalendaring.statusin-process":"In process","libcalendaring.delegatedto":"Delegated to:","libcalendaring.delegatedfrom":"Delegated from:","libcalendaring.showmore":"Show more...","checkingmail":"Checking for new messages...","deletemessage":"Delete message","movemessagetotrash":"Move message to trash","movingmessage":"Moving message(s)...","copyingmessage":"Copying message(s)...","deletingmessage":"Deleting message(s)...","markingmessage":"Marking message(s)...","copy":"Copy","move":"Move","quota":"Disk usage","replyall":"Reply all","replylist":"Reply list","stillsearching":"Still searching...","flagged":"Flagged","unflagged":"Not Flagged","unread":"Unread","deleted":"Deleted","replied":"Replied","forwarded":"Forwarded","priority":"Priority","withattachment":"With attachment","fileuploaderror":"File upload failed.","mark":"Mark","markallread":"Mark all as read","folders-cur":"Selected folder only","folders-sub":"Selected folder and its subfolders","folders-all":"All folders","bounce":"Resend","bouncemsg":"Resend (bounce)","sendingmessage":"Sending message...","back":"Back","errortitle":"An error occurred!","options":"Options","plaintoggle":"Plain text","htmltoggle":"HTML","previous":"Previous","next":"Next","select":"Select","browse":"Browse","choosefile":"Choose file...","choosefiles":"Choose files...","darkmode":"Dark mode","lightmode":"Light mode","purgefolderconfirm":"Do you really want to delete all messages in this folder?","deletemessagesconfirm":"Do you really want to delete selected message(s)?","showunread":"Show unread messages","searching":"Searching...","from":"From","to":"To","viewsource":"Show source","selectimportfile":"Please select a file to upload.","importwait":"Importing, please wait...","importmessages":"Import messages","import":"Import","uploadprogress":"$percent ($current of $total)","GB":"GB","MB":"MB","KB":"KB","B":"B","listoptionstitle":"List options"});
+rcmail.gui_container("taskbar","taskmenu");
+rcmail.gui_container("listcontrols","listcontrols");
+rcmail.gui_container("toolbar","mailtoolbar");
+rcmail.gui_container("forwardmenu","forward-menu");
+rcmail.gui_container("replyallmenu","replyall-menu");
+rcmail.gui_container("messagemenu","message-menu");
+rcmail.gui_container("markmenu","markmessage-menu");
+rcmail.gui_container("mailboxoptions","mailboxoptionsmenu");
+rcmail.gui_container("listoptions","listoptionsmenu");rcmail.register_button('plugin.archive', 'rcmbtn100', 'link', 'button archive', '', '');
+rcmail.register_button('plugin.markasjunk.junk', 'rcmbtn101', 'link', 'button junk', 'button junk pressed', '');
+rcmail.register_button('plugin.markasjunk.not_junk', 'rcmbtn102', 'link', 'button notjunk', 'button notjunk pressed', '');
+rcmail.register_button('download-eml', 'rcmbtn103', 'link', 'download eml active', '', '');
+rcmail.register_button('download-mbox', 'rcmbtn104', 'link', 'download mbox active', '', '');
+rcmail.register_button('download-maildir', 'rcmbtn105', 'link', 'download maildir active', '', '');
+rcmail.register_button('calendar', 'rcmbtn106', 'link', '', 'button-calendar button-selected', '');
+rcmail.register_button('calendar-create-from-mail', 'rcmbtn107', 'link', 'icon calendarlink active', '', '');
+rcmail.register_button('compose', 'rcmbtn108', 'link', '', '', '');
+rcmail.register_button('mail', 'rcmbtn109', 'link', '', 'mail selected', '');
+rcmail.register_button('addressbook', 'rcmbtn110', 'link', '', 'contacts selected', '');
+rcmail.register_button('settings', 'rcmbtn111', 'link', '', 'settings selected', '');
+rcmail.register_button('logout', 'rcmbtn114', 'link', '', '', '');
+rcmail.gui_object('mailboxlist', 'mailboxlist');
+rcmail.gui_object('quotadisplay', 'rcmquotadisplay');
+rcmail.register_button('checkmail', 'rcmbtn116', 'link', '', '', '');
+rcmail.gui_object('qsearchbox', 'mailsearchform');
+rcmail.register_button('reset-search', 'rcmbtn119', 'link', '', '', '');
+rcmail.gui_object('search_filter', 'searchfilter');
+rcmail.gui_object('search_interval', 's_interval');
+rcmail.gui_object('messagelist', 'messagelist');
+rcmail.register_button('firstpage', 'rcmbtn120', 'link', 'firstpage', '', '');
+rcmail.register_button('previouspage', 'rcmbtn121', 'link', 'prevpage', '', '');
+rcmail.gui_object('countdisplay', 'rcmcountdisplay');
+rcmail.register_button('nextpage', 'rcmbtn122', 'link', 'nextpage', '', '');
+rcmail.register_button('lastpage', 'rcmbtn123', 'link', 'lastpage', '', '');
+rcmail.register_button('compose', 'rcmbtn124', 'link', '', '', '');
+rcmail.register_button('reply', 'rcmbtn125', 'link', 'reply', '', '');
+rcmail.register_button('reply-all', 'rcmbtn126', 'link', 'reply-all', '', '');
+rcmail.register_button('forward', 'rcmbtn127', 'link', 'forward', '', '');
+rcmail.register_button('delete', 'rcmbtn128', 'link', 'delete', '', '');
+rcmail.register_button('forward-inline', 'rcmbtn129', 'link', 'forward inline active', '', '');
+rcmail.register_button('forward-attachment', 'rcmbtn130', 'link', 'forward attachment active', '', '');
+rcmail.register_button('bounce', 'rcmbtn131', 'link', 'forward bounce active', '', '');
+rcmail.register_button('reply-all', 'rcmbtn132', 'link', 'reply all active', '', '');
+rcmail.register_button('reply-list', 'rcmbtn133', 'link', 'reply list active', '', '');
+rcmail.register_button('print', 'rcmbtn134', 'link', 'print active', '', '');
+rcmail.register_button('import-messages', 'rcmbtn135', 'link', 'import active', '', '');
+rcmail.register_button('download', 'rcmbtn136', 'link', 'download active', '', '');
+rcmail.register_button('edit', 'rcmbtn137', 'link', 'edit asnew active', '', '');
+rcmail.register_button('viewsource', 'rcmbtn138', 'link', 'source active', '', '');
+rcmail.register_button('move', 'rcmbtn139', 'link', 'move active', '', '');
+rcmail.register_button('copy', 'rcmbtn140', 'link', 'copy active', '', '');
+rcmail.register_button('open', 'rcmbtn141', 'link', 'extwin active', '', '');
+rcmail.register_button('mark', 'rcmbtn142', 'link', 'read active', '', '');
+rcmail.register_button('mark', 'rcmbtn143', 'link', 'unread active', '', '');
+rcmail.register_button('mark', 'rcmbtn144', 'link', 'flag active', '', '');
+rcmail.register_button('mark', 'rcmbtn145', 'link', 'unflag active', '', '');
+rcmail.gui_object('importform', 'uploadformFrm');
+rcmail.register_button('move', 'rcmbtn146', 'link', 'active', '', '');
+rcmail.register_button('copy', 'rcmbtn147', 'link', 'active', '', '');
+rcmail.register_button('expunge', 'rcmbtn148', 'link', 'expunge active', '', '');
+rcmail.register_button('purge', 'rcmbtn149', 'link', 'purge active', '', '');
+rcmail.register_button('mark-all-read', 'rcmbtn150', 'link', 'read active', '', '');
+rcmail.register_button('settings.folders', 'rcmbtn151', 'link', 'folders active', '', '');
+rcmail.register_button('select-all', 'rcmbtn152', 'link', 'select all active', '', '');
+rcmail.register_button('select-all', 'rcmbtn153', 'link', 'select page active', '', '');
+rcmail.register_button('select-all', 'rcmbtn154', 'link', 'select unread active', '', '');
+rcmail.register_button('select-all', 'rcmbtn155', 'link', 'select flagged active', '', '');
+rcmail.register_button('select-all', 'rcmbtn156', 'link', 'select invert active', '', '');
+rcmail.register_button('select-none', 'rcmbtn157', 'link', 'select none active', '', '');
+rcmail.register_button('expand-unread', 'rcmbtn158', 'link', 'expand unread active', '', '');
+rcmail.register_button('expand-all', 'rcmbtn159', 'link', 'expand all active', '', '');
+rcmail.register_button('collapse-all', 'rcmbtn160', 'link', 'expand none active', '', '');
+rcmail.gui_object('message', 'messagestack');
+</script>
+
+<script src="./Sample SDS Handout_files/archive.min.js.download"></script><script src="./Sample SDS Handout_files/markasjunk.min.js.download"></script><script src="./Sample SDS Handout_files/newmail_notifier.min.js.download"></script><script src="./Sample SDS Handout_files/zipdownload.min.js.download"></script><script src="./Sample SDS Handout_files/jquery-ui.min.js.download"></script><script src="./Sample SDS Handout_files/calendar_base.js.download"></script><script src="./Sample SDS Handout_files/libcalendaring.js.download"></script>
+</head>
+<body class="task-mail action-none">
+	
+		<div id="layout">
+	
+
+<div id="layout-menu">
+	<h2 id="aria-label-tasknav" class="voice">Application tasks</h2>
+	<div class="popover-header">
+		<img src="./Sample SDS Handout_files/webuzo_icon_64.png" id="logo" alt="Logo">
+		<a class="button icon cancel"><span class="inner">Close</span></a>
+	</div>
+	<div id="taskmenu" class="menu toolbar" role="navigation" aria-labelledby="aria-label-tasknav">
+		<span class="action-buttons">
+			
+				<a class="compose" title="Create a new message" data-fab="true" data-fab-task="mail" data-fab-action="none" id="rcmbtn108" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_action=compose" onclick="return rcmail.command(&#39;compose&#39;,&#39;&#39;,this,event)" tabindex="0" aria-disabled="false"><span class="inner">Compose</span></a>
+			
+		</span>
+		
+			<a class="mail selected" id="rcmbtn109" role="button" href="https://elogixmail.com/webmail/?_task=mail" onclick="return rcmail.command(&#39;switch-task&#39;,&#39;mail&#39;,this,event)" tabindex="-1" aria-disabled="true"><span class="inner" style="">Mail</span></a>
+		
+		<a class="contacts" id="rcmbtn110" role="button" href="https://elogixmail.com/webmail/?_task=addressbook" onclick="return rcmail.command(&#39;switch-task&#39;,&#39;addressbook&#39;,this,event)" tabindex="0" aria-disabled="false"><span class="inner">Contacts</span></a>
+		<a class="button-calendar calendar" id="rcmbtn106" role="button" href="https://elogixmail.com/webmail/?_task=calendar" onclick="return rcmail.command(&#39;switch-task&#39;,&#39;calendar&#39;,this,event)" title="Calendar"><span class="button-inner inner" style="">Calendar</span></a>
+
+		<a class="settings" id="rcmbtn111" role="button" href="https://elogixmail.com/webmail/?_task=settings" onclick="return rcmail.command(&#39;switch-task&#39;,&#39;settings&#39;,this,event)" tabindex="0" aria-disabled="false"><span class="inner">Settings</span></a>
+		<span class="special-buttons">
+			
+				
+				
+				<a class="theme dark" id="rcmbtn112" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#"><span class="inner">Dark mode</span></a>
+			
+			<a class="about" onclick="UI.about_dialog(this)" id="rcmbtn113" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#"><span class="inner">About</span></a>
+			<a class="logout" id="rcmbtn114" role="button" href="https://elogixmail.com/webmail/?_task=logout" onclick="return rcmail.command(&#39;switch-task&#39;,&#39;logout&#39;,this,event)" tabindex="0" aria-disabled="false"><span class="inner">Logout</span></a>
+		</span>
+	</div>
+</div>
+
+
+<h1 class="voice">Mail</h1>
+
+<!-- folders list -->
+<div id="layout-sidebar" class="listbox" role="navigation" aria-labelledby="aria-label-folderlist">
+	<div class="header">
+		<a class="button icon back-list-button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#back"><span class="inner">Back</span></a>
+		<span class="header-title username" style="margin-right: 0px; margin-left: 18px; padding-right: 0px;">shayeri.nandy@elogixmail.com</span>
+		<a title="Folder actions..." class="button icon sidebar-menu active" data-popup="mailboxoptions-menu" id="rcmbtn115" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" aria-haspopup="true" aria-expanded="false" aria-owns="mailboxoptions-menu" data-original-title="Folder actions..."><span class="inner">Actions</span></a>
+	</div>
+	<h2 id="aria-label-folderlist" class="voice">Email folder selection</h2>
+	<div id="folderlist-content" class="scroller">
+		<ul id="mailboxlist" class="treelist listing folderlist notree" role="tree"><li id="rcmliSU5CT1g" class="mailbox inbox selected" aria-selected="true" role="treeitem" aria-level="1"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX" onclick="return rcmail.command(&#39;list&#39;,&#39;INBOX&#39;,this,event)" rel="INBOX">Inbox</a></li>
+<li id="rcmliSU5CT1guRHJhZnRz" class="mailbox drafts" role="treeitem" aria-level="1"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX.Drafts" onclick="return rcmail.command(&#39;list&#39;,&#39;INBOX.Drafts&#39;,this,event)" rel="INBOX.Drafts">Drafts</a></li>
+<li id="rcmliSU5CT1guU2VudA" class="mailbox sent" role="treeitem" aria-level="1"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX.Sent" onclick="return rcmail.command(&#39;list&#39;,&#39;INBOX.Sent&#39;,this,event)" rel="INBOX.Sent">Sent</a></li>
+<li id="rcmliSU5CT1guc3BhbQ" class="mailbox junk" role="treeitem" aria-level="1"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX.spam" onclick="return rcmail.command(&#39;list&#39;,&#39;INBOX.spam&#39;,this,event)" rel="INBOX.spam">Junk</a></li>
+<li id="rcmliSU5CT1guVHJhc2g" class="mailbox trash empty" role="treeitem" aria-level="1"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX.Trash" onclick="return rcmail.command(&#39;list&#39;,&#39;INBOX.Trash&#39;,this,event)" rel="INBOX.Trash">Trash</a></li>
+</ul>
+	</div>
+	<div class="footer small">
+		
+			<div id="quotadisplay" class="quota-widget" data-original-title="Disk usage: 10 MB / 1.0 GB (1%)" title="">
+				<span class="voice">Disk usage</span>
+				<span class="count" id="rcmquotadisplay" title="Disk usage: 10 MB / 1.0 GB (1%)">1%</span>
+			<span class="bar"><span class="value" style="width: 10%;"></span></span></div>
+		
+	</div>
+<div class="column-resizer"></div></div>
+
+<!-- messages list -->
+<div id="layout-list" class="listbox selected">
+	<div id="messagelist-header" class="header">
+		<a class="button icon task-menu-button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#menu"><span class="inner">Menu</span></a>
+		<a class="button icon back-sidebar-button folders" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#sidebar"><span class="inner">Folders</span></a>
+		<span class="header-title">Inbox</span>
+		
+		<ul class="menu toolbar listing iconized" id="toolbar-list-menu"><li role="menuitem"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#select" class="select active" data-popup="listselect-menu" data-toggle-button="list-toggle-button" title="Select" aria-haspopup="true" aria-expanded="false" aria-owns="listselect-menu" data-original-title="Select"><span class="inner">Select</span></a></li><li role="menuitem"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#threads" class="threads disabled" data-popup="threadselect-menu" title="Threads" aria-haspopup="true" aria-expanded="false" aria-owns="threadselect-menu" data-original-title="Threads"><span class="inner">Threads</span></a></li><li role="menuitem"><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#list-options" onclick="return rcmail.command(&#39;menu-open&#39;, &#39;messagelistmenu&#39;, this, event)" class="options active" id="listmenulink" title="Options" tabindex="0"><span class="inner">Options</span></a></li></ul><a class="button icon toolbar-button refresh" title="Check for new messages" id="rcmbtn116" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;checkmail&#39;,&#39;&#39;,this,event)" tabindex="0" aria-disabled="false"><span class="inner">Refresh</span></a>
+		<a class="button icon toolbar-menu-button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#list-menu"><span class="inner">Menu</span></a>
+	<a class="button icon toolbar-list-button active" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#list-menu" data-popup="toolbar-list-menu" aria-haspopup="true" aria-expanded="false" aria-owns="toolbar-list-menu" data-original-title="" title=""></a></div>
+	
+	<div role="search" aria-labelledby="aria-label-mailquicksearchbox" class="searchbar menu"><h2 id="aria-label-mailquicksearchbox" class="voice">Email search input</h2><form name="rcmqsearchform" onsubmit="rcmail.command(&#39;search&#39;); return false" action="https://elogixmail.com/webmail/?_task=mail" method="get"><label for="mailsearchform" class="voice">Search terms</label><input name="_q" id="mailsearchform" class="no-bs" placeholder="Search..." type="text"></form>
+<a class="button reset" title="Reset search" tabindex="0" id="rcmbtn119" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;reset-search&#39;,&#39;&#39;,this,event)" aria-disabled="false"><span class="inner">Reset search</span></a>
+<a class="button unread" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" role="button" title="Show unread messages"></a><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#search-filter" class="button options" title="Options" tabindex="0" data-target="searchmenu" id="rcmbtn117" role="button"><span class="inner">Options</span></a>
+<a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#search" class="button search" title="Find mail messages" tabindex="0" id="rcmbtn118" role="button"><span class="inner">Find mail messages</span></a></div>
+	<div id="searchmenu" class="hidden searchoptions scroller propform formcontainer" aria-labelledby="aria-label-search-menu" aria-controls="messagelist">
+		<h3 id="aria-label-search-menu" class="voice">Search modifiers</h3>
+		<div class="formcontent">
+			<ul class="proplist">
+				<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="subject" class="form-check-input custom-control-input" id="icochk1"><label for="icochk1" class="custom-control-label" title="">Subject</label></div></li>
+				<li class="with-sublist">
+					<div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="sender" class="form-check-input custom-control-input" id="icochk2"><label for="icochk2" class="custom-control-label" title="">Sender</label></div>
+					<a class="button icon dropdown" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" title="Details"></a>
+					<ul class="proplist d-none">
+						<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="from" class="form-check-input custom-control-input" id="icochk3"><label for="icochk3" class="custom-control-label" title="">From</label></div></li>
+						<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="replyto" class="form-check-input custom-control-input" id="icochk4"><label for="icochk4" class="custom-control-label" title="">Reply-To</label></div></li>
+						<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="followupto" class="form-check-input custom-control-input" id="icochk5"><label for="icochk5" class="custom-control-label" title="">Followup-To</label></div></li>
+					</ul>
+				</li>
+				<li class="with-sublist">
+					<div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="recipient" class="form-check-input custom-control-input" id="icochk6"><label for="icochk6" class="custom-control-label" title="">Recipient</label></div>
+					<a class="button icon dropdown" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" title="Details"></a>
+					<ul class="proplist d-none">
+						<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="to" class="form-check-input custom-control-input" id="icochk7"><label for="icochk7" class="custom-control-label" title="">To</label></div></li>
+						<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="cc" class="form-check-input custom-control-input" id="icochk8"><label for="icochk8" class="custom-control-label" title="">Cc</label></div></li>
+						<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="bcc" class="form-check-input custom-control-input" id="icochk9"><label for="icochk9" class="custom-control-label" title="">Bcc</label></div></li>
+					</ul>
+				</li>
+				<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="body" class="form-check-input custom-control-input" id="icochk10"><label for="icochk10" class="custom-control-label" title="">Body</label></div></li>
+				<li><div class="custom-control custom-switch"><input type="checkbox" name="s_mods[]" value="text" class="form-check-input custom-control-input" id="icochk11"><label for="icochk11" class="custom-control-label" title="">Entire message</label></div></li>
+			</ul>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<label for="searchfilter" class="input-group-text">Type</label>
+				</div>
+				<select name="searchfilter" id="searchfilter" class="custom-select form-control pretty-select">
+<option value="ALL" selected="">All</option><option value="UNSEEN">Unread</option><option value="FLAGGED">Flagged</option><option value="UNANSWERED">Unanswered</option><option value="DELETED">Deleted</option><option value="UNDELETED">Not deleted</option><option value="OR OR OR HEADER Content-Type application/ HEADER Content-Type multipart/mixed HEADER Content-Type multipart/signed HEADER Content-Type multipart/report">With attachment</option><option value="HEADER X-PRIORITY 1">Priority: Highest</option><option value="HEADER X-PRIORITY 2">Priority: High</option><option value="NOT HEADER X-PRIORITY 1 NOT HEADER X-PRIORITY 2 NOT HEADER X-PRIORITY 4 NOT HEADER X-PRIORITY 5">Priority: Normal</option><option value="HEADER X-PRIORITY 4">Priority: Low</option><option value="HEADER X-PRIORITY 5">Priority: Lowest</option></select>
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<label for="s_interval" class="input-group-text">Date</label>
+				</div>
+				<select name="searchinterval" id="s_interval" class="custom-select form-control pretty-select">
+<option value="" selected=""></option><option value="1W">younger than a week</option><option value="1M">younger than a month</option><option value="1Y">younger than a year</option><option value="-1W">older than a week</option><option value="-1M">older than a month</option><option value="-1Y">older than a year</option></select>
+			</div>
+			<div class="input-group">
+				<div class="input-group-prepend">
+					<label for="s_scope" class="input-group-text">Scope</label>
+				</div>
+				<select name="s_scope" id="s_scope" class="custom-select form-control pretty-select">
+					<option value="base">Current folder</option>
+					<option value="sub">This and subfolders</option>
+					<option value="all">All folders</option>
+				</select>
+			</div>
+		</div>
+		<div class="formbuttons">
+			<button type="button" class="btn btn-primary icon search" onclick="return rcmail.command(&#39;search&#39;)">Search</button>
+		</div>
+	</div>
+	<div id="messagelist-content" class="scroller" tabindex="-1">
+		<h2 id="aria-label-messagelist" class="voice">Email Messages Listing</h2>
+		<table id="messagelist-fixedcopy" class="listing messagelist sortheader fixedheader sort-none fixedcopy" role="presentation" style="position: fixed; width: 345.547px; margin-left: 0px; margin-top: 0px;"><thead><tr><th class="selection" style="width: 0px;"><input type="checkbox" tabindex="-1"></th><th class="threads" id="rcmthreads" style="width: 0px;"><span class="threads"></span></th><th class="subject" id="rcmsubject" rel="fromto" style="width: 0px;"><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="subject" title="Sort by" tabindex="0">From</a></th><th class="status" id="rcmstatus" style="width: 0px;"><span class="status">Read status</span></th><th class="fromto" id="rcmfromto" style="width: 0px;"><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="fromto" title="Sort by" tabindex="0">From</a></th><th class="date" id="rcmdate" style="width: 0px;"><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="date" title="Sort by" tabindex="0">Date</a></th><th class="size" id="rcmsize" style="width: 0px;"><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="size" title="Sort by" tabindex="0">Size</a></th><th class="flag" id="rcmflag" style="width: 0px;"><span class="flagged">Flagged</span></th><th class="attachment" id="rcmattachment" style="width: 0px;"><span class="attachment">Attachment</span></th></tr></thead><tbody></tbody></table><table id="messagelist" class="listing messagelist sortheader fixedheader sort-none" aria-labelledby="aria-label-messagelist" data-list="message_list" data-label-msg="The list is empty." tabindex="0"><thead><tr><th class="selection" style=""><input type="checkbox" tabindex="-1"></th><th class="threads" id="rcmthreads" style=""><span class="threads"></span></th><th class="subject" id="rcmsubject" rel="fromto" style=""><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="subject" title="Sort by" tabindex="-1">From</a></th><th class="status" id="rcmstatus" style=""><span class="status">Read status</span></th><th class="fromto" id="rcmfromto" style=""><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="fromto" title="Sort by" tabindex="-1">From</a></th><th class="date" id="rcmdate" style=""><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="date" title="Sort by" tabindex="-1">Date</a></th><th class="size" id="rcmsize" style=""><a href="https://elogixmail.com/webmail/#sort" class="sortcol" rel="size" title="Sort by" tabindex="-1">Size</a></th><th class="flag" id="rcmflag" style=""><span class="flagged">Flagged</span></th><th class="attachment" id="rcmattachment" style=""><span class="attachment">Attachment</span></th></tr></thead><tbody><tr id="rcmrowMTY" class="message selected focused" aria-selected="true"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="anirban@elogixmail.com" class="rcmContactAddress">Anirban Chatterjee</span></span></span><span class="date skip-on-drag">Thu 18:05</span><span class="size skip-on-drag">4.2 MB</span><span class="subject"><span id="msgicnrcmrowMTY" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=16&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Prompt and attachments</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTY" class="unflagged" title="Not Flagged"></span></span><span class="attachment"><span class="attachment" title="With attachment"></span></span></td></tr><tr id="rcmrowMTU" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">Wed 10:39</span><span class="size skip-on-drag">1.0 MB</span><span class="subject"><span id="msgicnrcmrowMTU" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=15&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Birthday wishes_Bhaskar Mondal</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTU" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowMTQ" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="anirban@elogixmail.com" class="rcmContactAddress">Anirban Chatterjee</span></span></span><span class="date skip-on-drag">Tue 19:04</span><span class="size skip-on-drag">8 KB</span><span class="subject"><span id="msgicnrcmrowMTQ" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=14&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Re: Late Arrival to Office</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTQ" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowMTM" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">Tue 17:10</span><span class="size skip-on-drag">7 KB</span><span class="subject"><span id="msgicnrcmrowMTM" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=13&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Fwd: Re: Important Notice: ISO_ISMS &amp; QMS awareness</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTM" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowMTI" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">Tue 17:01</span><span class="size skip-on-drag">106 KB</span><span class="subject"><span id="msgicnrcmrowMTI" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=12&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1" title="Re: Important Notice: Interaction Session with Peerless Securities _12th November 2025"><span>Re: Important Notice: Interaction Session with Peerless Securities _12th November 2025</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTI" class="unflagged" title="Not Flagged"></span></span><span class="attachment"><span class="attachment" title="With attachment"></span></span></td></tr><tr id="rcmrowMTE" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">Mon 17:28</span><span class="size skip-on-drag">3 KB</span><span class="subject"><span id="msgicnrcmrowMTE" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=11&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Important Notice: Interaction Session with Peerless Securities _12th November 2025</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTE" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowMTA" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">Sun 21:05</span><span class="size skip-on-drag">1.1 MB</span><span class="subject"><span id="msgicnrcmrowMTA" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=10&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Birthday wishes_Debayan Roy</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMTA" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowOQ" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">2025-11-07 10:23</span><span class="size skip-on-drag">1.4 MB</span><span class="subject"><span id="msgicnrcmrowOQ" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=9&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Birthday wishes_Dhruba Gupta</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowOQ" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowOA" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="anirban@elogixmail.com" class="rcmContactAddress">Anirban Chatterjee</span></span></span><span class="date skip-on-drag">2025-11-05 11:43</span><span class="size skip-on-drag">8 KB</span><span class="subject"><span id="msgicnrcmrowOA" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=8&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Re: Update on 2 Week Process</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowOA" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowNw" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="noreply@tm.openai.com" class="rcmContactAddress">noreply@tm.openai.com</span></span></span><span class="date skip-on-drag">2025-11-03 15:29</span><span class="size skip-on-drag">16 KB</span><span class="subject"><span id="msgicnrcmrowNw" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=7&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Your ChatGPT code is 978793</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowNw" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowNg" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="anirban@elogixmail.com" class="rcmContactAddress">Anirban Chatterjee</span></span></span><span class="date skip-on-drag">2025-11-03 14:51</span><span class="size skip-on-drag">15 KB</span><span class="subject"><span id="msgicnrcmrowNg" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=6&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Re: Training Plan_Trainee-Developer_Shayeri Nandy</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowNg" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowNQ" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="soumi@elogixmail.com" class="rcmContactAddress">Soumi .</span></span></span><span class="date skip-on-drag">2025-11-03 13:53</span><span class="size skip-on-drag">17 KB</span><span class="subject"><span id="msgicnrcmrowNQ" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=5&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Re: Onboarding deck_Elogix Software Pvt. Ltd._Trainee Developer_Shayeri Nandy</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowNQ" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowNA" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="security-noreply@linkedin.com" class="rcmContactAddress">LinkedIn</span></span></span><span class="date skip-on-drag">2025-11-03 13:21</span><span class="size skip-on-drag">29 KB</span><span class="subject"><span id="msgicnrcmrowNA" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=4&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Shayeri, here's the verification code</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowNA" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr><tr id="rcmrowMw" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="soumi@elogixmail.com" class="rcmContactAddress">Soumi .</span></span></span><span class="date skip-on-drag">2025-11-03 12:32</span><span class="size skip-on-drag">3.0 MB</span><span class="subject"><span id="msgicnrcmrowMw" class="msgicon status replied" title="Replied "></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=3&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Onboarding deck_Elogix Software Pvt. Ltd._Trainee Developer_Shayeri Nandy</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMw" class="unflagged" title="Not Flagged"></span></span><span class="attachment"><span class="attachment" title="With attachment"></span></span></td></tr><tr id="rcmrowMg" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="hr@elogixmail.com" class="rcmContactAddress">HR</span></span></span><span class="date skip-on-drag">2025-11-03 12:15</span><span class="size skip-on-drag">49 KB</span><span class="subject"><span id="msgicnrcmrowMg" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=2&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>New joinee_Trainee_Shayeri Nandy</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMg" class="unflagged" title="Not Flagged"></span></span><span class="attachment"><span class="attachment" title="With attachment"></span></span></td></tr><tr id="rcmrowMQ" class="message"><td class="selection"><input type="checkbox" tabindex="-1"></td><td class="subject"><span class="fromto skip-on-drag"><span class="adr"><span title="soumi@elogixmail.com" class="rcmContactAddress">Soumi .</span></span></span><span class="date skip-on-drag">2025-11-03 11:44</span><span class="size skip-on-drag">9 KB</span><span class="subject"><span id="msgicnrcmrowMQ" class="msgicon status" title=""></span><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX&amp;_uid=1&amp;_action=show" onclick="return rcube_event.keyboard_only(event)" onmouseover="rcube_webmail.long_subject_title(this)" tabindex="-1"><span>Test</span></a></span></td><td class="flags"><span class="flag"><span id="flagicnrcmrowMQ" class="unflagged" title="Not Flagged"></span></span><span class="attachment">&nbsp;</span></td></tr></tbody></table><div class="listing-info hidden"></div>
+	</div>
+	<div class="pagenav menu footer small" role="toolbar" aria-label="List navigation">
+	<a class="firstpage disabled" title="Show first page" id="rcmbtn120" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;firstpage&#39;,&#39;&#39;,this,event)"><span class="inner">First</span></a>
+	<a class="prevpage disabled" title="Show previous page" id="rcmbtn121" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;previouspage&#39;,&#39;&#39;,this,event)"><span class="inner">Previous</span></a>
+	
+		<span class="pagenav-text" aria-live="polite" aria-relevant="text" id="rcmcountdisplay">Messages 1 to 16 of 16</span>
+		<input class="form-control rcpagejumper" type="text" size="3" disabled="" title="Current page">
+	
+	<a class="nextpage disabled" title="Show next page" id="rcmbtn122" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;nextpage&#39;,&#39;&#39;,this,event)"><span class="inner">Next</span></a>
+	<a class="lastpage disabled" title="Show last page" id="rcmbtn123" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;lastpage&#39;,&#39;&#39;,this,event)"><span class="inner">Last</span></a>
+</div>
+
+<div class="column-resizer"></div></div>
+
+<!-- message preview -->
+<div id="layout-content">
+	<h2 id="aria-label-toolbar" class="voice">Application toolbar</h2>
+	<div class="header" role="toolbar" aria-labelledby="aria-label-toolbar">
+		<a class="button icon back-list-button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#back" style="display: none;"><span class="inner">Back</span></a>
+		<span class="header-title">Mail</span>
+		
+
+
+<div id="forward-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-forward-menu" class="voice">Forwarding options</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-forward-menu">
+		<li role="menuitem"><a class="forward inline active" id="rcmbtn129" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;forward-inline&#39;,&#39;sub&#39;,this,event)">Forward inline</a></li>
+		<li role="menuitem"><a class="forward attachment active" id="rcmbtn130" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;forward-attachment&#39;,&#39;sub&#39;,this,event)">Forward as attachment</a></li>
+		<li role="menuitem"><a class="forward bounce active" id="rcmbtn131" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;bounce&#39;,&#39;&#39;,this,event)">Resend (bounce)</a></li>
+		
+	</ul>
+</div>
+
+<div id="replyall-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-replyall-menu" class="voice">Reply-all options</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-replyall-menu">
+		<li role="menuitem"><a class="reply all active" id="rcmbtn132" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;reply-all&#39;,&#39;sub&#39;,this,event)">Reply all</a></li>
+		<li role="menuitem"><a class="reply list disabled" id="rcmbtn133" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;reply-list&#39;,&#39;sub&#39;,this,event)">Reply list</a></li>
+		
+	</ul>
+</div>
+
+<div id="message-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-message-menu" class="voice">More message actions</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-message-menu">
+		<li role="menuitem" class="hidden-small"><a class="print active" data-hidden="small" id="rcmbtn134" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;print&#39;,&#39;&#39;,this,event)">Print this message</a></li>
+		
+			<li role="menuitem"><a class="import active" onclick="UI.import_dialog()" id="rcmbtn135" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#">Import</a></li>
+		
+		<li role="menuitem"><a class="download active" id="rcmbtn136" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;download&#39;,&#39;&#39;,this,event)" aria-haspopup="true"><span>Download...</span></a></li>
+		<li role="menuitem"><a class="edit asnew active" id="rcmbtn137" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;edit&#39;,&#39;new&#39;,this,event)">Edit as new</a></li>
+		<li role="menuitem"><a class="source active" id="rcmbtn138" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;viewsource&#39;,&#39;&#39;,this,event)">Show source</a></li>
+		<li role="menuitem"><a class="move active" aria-haspopup="true" id="rcmbtn139" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;move&#39;,&#39;&#39;,this,event)"><span class="folder-selector-link">Move to...</span></a></li>
+		<li role="menuitem"><a class="copy active" aria-haspopup="true" id="rcmbtn140" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;copy&#39;,&#39;&#39;,this,event)"><span class="folder-selector-link">Copy to...</span></a></li>
+		<li role="menuitem" class="hidden-small"><a target="_blank" class="extwin active" data-hidden="small" id="rcmbtn141" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;open&#39;,&#39;&#39;,this,event)">Open in new window</a></li>
+		<li role="menuitem"><a class="icon calendarlink active" id="rcmbtn107" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;calendar-create-from-mail&#39;,&#39;&#39;,this,event)"><span class="icon calendar">Save as event</span></a></li>
+
+	</ul>
+</div>
+
+<div id="markmessage-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-markmessage-menu" class="voice">Mark selected messages as...</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-markmessage-menu">
+		<li role="menuitem"><a class="read active" id="rcmbtn142" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;mark&#39;,&#39;read&#39;,this,event)">As read</a></li>
+		<li role="menuitem"><a class="unread active" id="rcmbtn143" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;mark&#39;,&#39;unread&#39;,this,event)">As unread</a></li>
+		<li role="menuitem"><a class="flag active" id="rcmbtn144" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;mark&#39;,&#39;flagged&#39;,this,event)">As flagged</a></li>
+		<li role="menuitem"><a class="unflag active" id="rcmbtn145" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;mark&#39;,&#39;unflagged&#39;,this,event)">As unflagged</a></li>
+		
+		
+	</ul>
+</div>
+
+
+	<div id="uploadform" class="popupmenu formcontent"><form id="uploadformFrm" name="importform" method="post" enctype="multipart/form-data" action="https://elogixmail.com/webmail/?_task=mail">
+<input type="hidden" name="_token" value="Yh7jTZ6lavQUcWZdDnivEBhRchHETl7V"><div><input type="hidden" name="_unlock" value=""><input type="hidden" name="_framed" value="1"><p>You can upload mail using files in <a href="https://en.wikipedia.org/wiki/Email#Message_format">MIME</a> or <a href="https://en.wikipedia.org/wiki/Mbox">Mbox</a> format. Multiple files can be compressed into zip archives.</p><div class="custom-file"><input multiple="" name="_file[]" accept=".eml,.mbox,.msg,message/rfc822,text/*.zip,application/zip,application/x-zip" id="uploadformInput" type="file" class="form-control custom-file-input"><label class="custom-file-label" data-browse="Browse">Choose files...</label></div><div class="hint">Maximum allowed file size is 128 MB</div></div></form></div>
+
+
+	<ul class="menu toolbar listing iconized" id="toolbar-menu"><li role="menuitem"><a class="compose hidden" title="Create a new message" id="rcmbtn124" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_action=compose" onclick="return rcmail.command(&#39;compose&#39;,&#39;&#39;,this,event)" tabindex="0" aria-disabled="false"><span class="inner">Compose</span></a></li><li role="menuitem"><a class="reply" title="Reply to sender" data-content-button="true" id="rcmbtn125" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;reply&#39;,&#39;&#39;,this,event)"><span class="inner">Reply</span></a></li><li role="menuitem"><span class="dropbutton active"><a class="reply-all" title="Reply to list or to sender and all recipients" id="rcmbtn126" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;reply-all&#39;,&#39;&#39;,this,event)"><span class="inner">Reply all</span></a><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#reply-all" id="replyallmenulink" class="dropdown active" data-popup="replyall-menu" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-owns="replyall-menu" data-original-title="" title="">
+			<span class="inner">Reply-all options</span>
+		</a></span></li><li role="menuitem"><span class="dropbutton active"><a class="forward" title="Forward the message" id="rcmbtn127" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;forward&#39;,&#39;&#39;,this,event)"><span class="inner">Forward</span></a><a href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#forward" id="forwardmenulink" class="dropdown active" data-popup="forward-menu" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-owns="forward-menu" data-original-title="" title="">
+			<span class="inner">Forwarding options</span>
+		</a></span></li><li role="menuitem" class="spacer"></li><li role="menuitem"><a class="delete" title="Move message to trash" id="rcmbtn128" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;delete&#39;,&#39;&#39;,this,event)"><span class="inner">Delete</span></a></li><li role="menuitem"><a class="button archive" title="Archive this message" id="rcmbtn100" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;plugin.archive&#39;,&#39;&#39;,this,event)"><span class="inner">Archive</span></a></li><li role="menuitem" style="display: none;"><a class="button notjunk" title="This message is not junk" id="rcmbtn102" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;plugin.markasjunk.not_junk&#39;,&#39;&#39;,this,event)"><span class="inner">Not junk</span></a></li><li role="menuitem"><a class="button junk" title="This message is junk" id="rcmbtn101" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;plugin.markasjunk.junk&#39;,&#39;&#39;,this,event)"><span class="inner">Junk</span></a></li><li role="menuitem"><a id="markmessagemenulink" class="markmessage active" title="Mark messages" data-popup="markmessage-menu" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" aria-haspopup="true" aria-expanded="false" aria-owns="markmessage-menu" data-original-title="Mark messages"><span class="inner">Mark</span></a></li><li role="menuitem"><a id="messagemenulink" class="more active" title="More actions..." data-popup="message-menu" role="button" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" aria-haspopup="true" aria-expanded="false" aria-owns="message-menu" data-original-title="More actions..."><span class="inner">More</span></a></li><li role="menuitem"><a aria-haspopup="true" aria-expanded="false" aria-owns="listselect-menu" data-original-title="" title="" id="1763113642770-clone" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" class="select hidden-big hidden-large active"><span class="inner">Select</span></a></li><li role="menuitem"><a aria-haspopup="true" aria-expanded="false" aria-owns="threadselect-menu" data-original-title="" title="" id="1763113642771-clone" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" class="threads disabled hidden-big hidden-large"><span class="inner">Threads</span></a></li><li role="menuitem"><a id="listmenulink-clone" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" class="options active hidden-big hidden-large"><span class="inner">Options</span></a></li></ul><a class="button icon toolbar-menu-button active" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#menu" data-popup="toolbar-menu" aria-haspopup="true" aria-expanded="false" aria-owns="toolbar-menu" data-original-title="" title=""></a></div>
+	<h2 id="aria-label-mailpreviewframe" class="voice">Message preview</h2>
+	<div class="iframe-wrapper">
+		<iframe name="messagecontframe" id="messagecontframe" aria-labelledby="aria-label-mailpreviewframe" src="./Sample SDS Handout_files/watermark.html" title="Message preview"></iframe>
+	</div>
+<div class="footer menu toolbar content-frame-navigation hide-nav-buttons"><a class="button prev"><span class="inner">Previous</span></a><span class="buttons"><a id="rcmbtn125-clone" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" class="reply button" tabindex="0" aria-disabled="false"><span class="inner">Reply</span></a></span><a class="button next"><span class="inner">Next</span></a></div></div>
+
+<!-- popup menus -->
+
+<div id="dragmessage-menu" class="popupmenu">
+	<h3 id="aria-label-dragmessage-menu" class="voice">Drag-n-Drop action menu</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-dragmessage-menu">
+		<li role="menuitem"><a onclick="return rcmail.drag_menu_action(&#39;move&#39;)" class="active" id="rcmbtn146" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#">Move</a></li>
+		<li role="menuitem"><a onclick="return rcmail.drag_menu_action(&#39;copy&#39;)" class="active" id="rcmbtn147" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#">Copy</a></li>
+	</ul>
+</div>
+
+<div id="mailboxoptions-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-mailboxoptions-menu" class="voice">Folder actions menu</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-mailboxoptions-menu">
+		<li role="menuitem"><a class="expunge active" id="rcmbtn148" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;expunge&#39;,&#39;&#39;,this,event)">Compact</a></li>
+		<li role="menuitem"><a class="purge active" id="rcmbtn149" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;purge&#39;,&#39;&#39;,this,event)">Empty</a></li>
+		<li role="menuitem"><a class="read disabled" id="rcmbtn150" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;mark-all-read&#39;,&#39;&#39;,this,event)">Mark all as read</a></li>
+		<li role="menuitem"><a class="folders active" id="rcmbtn151" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=settings&amp;_action=folders">Manage folders</a></li>
+		
+	</ul>
+</div>
+
+<div id="listselect-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-listselect-menu" class="voice">List selection menu</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-listselect-menu">
+		<li role="menuitem"><a class="selection active" id="list-toggle-button" onclick="UI.toggle_list_selection(this, &#39;messagelist&#39;)" role="button" tabindex="0" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#">Selection</a></li>
+		<li role="menuitem"><a class="select all active" id="rcmbtn152" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;select-all&#39;,&#39;&#39;,this,event)">All</a></li>
+		<li role="menuitem"><a class="select page active" id="rcmbtn153" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;select-all&#39;,&#39;page&#39;,this,event)">Current page</a></li>
+		<li role="menuitem"><a class="select unread active" id="rcmbtn154" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;select-all&#39;,&#39;unread&#39;,this,event)">Unread</a></li>
+		<li role="menuitem"><a class="select flagged active" id="rcmbtn155" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;select-all&#39;,&#39;flagged&#39;,this,event)">Flagged</a></li>
+		<li role="menuitem"><a class="select invert active" id="rcmbtn156" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;select-all&#39;,&#39;invert&#39;,this,event)">Invert</a></li>
+		<li role="menuitem"><a class="select none active" id="rcmbtn157" role="button" tabindex="0" aria-disabled="false" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;select-none&#39;,&#39;&#39;,this,event)">None</a></li>
+	</ul>
+</div>
+
+<div id="threadselect-menu" class="popupmenu" aria-hidden="true">
+	<h3 id="aria-label-threadselectmenu" class="voice">Threads listing menu</h3>
+	<ul class="menu listing" role="menu" aria-labelledby="aria-label-threadselectmenu">
+		<li role="menuitem"><a class="expand unread disabled" id="rcmbtn158" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;expand-unread&#39;,&#39;&#39;,this,event)">Expand Unread</a></li>
+		<li role="menuitem"><a class="expand all disabled" id="rcmbtn159" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;expand-all&#39;,&#39;&#39;,this,event)">Expand All</a></li>
+		<li role="menuitem"><a class="expand none disabled" id="rcmbtn160" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;collapse-all&#39;,&#39;&#39;,this,event)">Collapse All</a></li>
+	</ul>
+</div>
+
+<div id="listoptions-menu" class="popupmenu propform" role="dialog" aria-labelledby="aria-label-listoptions">
+	<h3 id="aria-label-listoptions" class="voice">Message list display and sorting options</h3>
+	
+	<div class="form-group row">
+		<label for="listoptions-sortcol" class="col-form-label col-sm-4">Sorting column</label>
+		<div class="col-sm-8">
+			<select id="listoptions-sortcol" name="sort_col" class="form-control custom-select pretty-select">
+				<option value="">None</option>
+				<option value="arrival">Arrival date</option>
+				<option value="date">Sent date</option>
+				<option value="subject">Subject</option>
+				<option value="fromto">From/To</option>
+				<option value="from">From</option>
+				<option value="to">To</option>
+				<option value="cc">Cc</option>
+				<option value="size">Size</option>
+			</select>
+		</div>
+	</div>
+	
+	
+	<div class="form-group row">
+		<label for="listoptions-sortord" class="col-form-label col-sm-4">Sorting order</label>
+		<div class="col-sm-8">
+			<select id="listoptions-sortord" name="sort_ord" class="form-control custom-select pretty-select">
+				<option value="ASC">ascending</option>
+				<option value="DESC">descending</option>
+			</select>
+		</div>
+	</div>
+	
+	
+	<div class="form-group row">
+		<label for="listoptions-threads" class="col-form-label col-sm-4">List mode</label>
+		<div class="col-sm-8">
+			<select id="listoptions-threads" name="mode" class="form-control custom-select pretty-select">
+				<option value="list">List</option>
+				<option value="threads">Threads</option>
+			</select>
+		</div>
+	</div>
+	
+	
+	
+</div>
+
+
+</div>
+
+<a href="https://webuzo.com/" target="_blank" id="supportlink" class="hidden">Get support</a>
+
+
+
+<div id="messagestack"></div>
+<div id="zipdownload-menu" class="popupmenu" aria-hidden="true"><h2 class="voice" id="aria-label-zipdownloadmenu">Message Download Options Menu</h2><ul role="menu" aria-labelledby="aria-label-zipdownloadmenu" class="toolbarmenu menu"><li><a class="download eml disabled" id="rcmbtn103" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;download-eml&#39;,&#39;&#39;,this,event)">Source (.eml)</a></li><li><a class="download mbox disabled" id="rcmbtn104" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;download-mbox&#39;,&#39;&#39;,this,event)">Mbox format (.zip)</a></li><li><a class="download maildir disabled" id="rcmbtn105" role="button" tabindex="-1" aria-disabled="true" href="https://elogixmail.com/webmail/?_task=mail&amp;_mbox=INBOX#" onclick="return rcmail.command(&#39;download-maildir&#39;,&#39;&#39;,this,event)">Maildir format (.zip)</a></li></ul></div>
+<script>
+$(function() {
+rcmail.init();
+rcmail.set_quota({"used":11111,"total":1048576,"percent":1,"free":99,"type":"text","folder":"INBOX","title":"Disk usage: 10 MB / 1.0 GB (1%)"});
+});
+</script>
+
+
+
+<script src="./Sample SDS Handout_files/bootstrap.bundle.min.js.download"></script>
+<script src="./Sample SDS Handout_files/ui.min.js.download"></script>
+
+
+</body></html>

@@ -1,0 +1,12 @@
+services:
+  chroma:
+    image: chromadb/chroma:0.5.4
+    container_name: chroma-db
+    ports:
+      - "8000:8000"
+    environment:
+      - CHROMA_SERVER_HOST=0.0.0.0
+      - CHROMA_SERVER_HTTP_PORT=8000
+    volumes:
+      - ./chroma-data:/chroma/chroma
+    restart: always

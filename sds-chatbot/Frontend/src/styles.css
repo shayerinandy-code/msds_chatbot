@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  padding: 16px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+  margin-top: 0;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* Chat area */
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Message bubbles */
+.message {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.bot {
+  background: #f1f1f1;
+}
+
+.user {
+  background: #e6f0ff;
+  margin-left: auto;
+}
+
+/* Input bar */
+.input-bar {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+}
+
+.input-bar input {
+  flex: 1;
+  padding: 8px;
+  margin: 0 8px;
+}
+
+.input-bar button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.plus {
+  width: 32px;
+}

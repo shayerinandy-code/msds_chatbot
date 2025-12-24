@@ -1,0 +1,14 @@
+/* src/components/MessageCard.css */
+.message-card { max-width:900px; margin:12px 0; }
+.message-card .mc-header { display:flex; justify-content:space-between; margin-bottom:8px; }
+.message-card.user .mc-body { background:#e9f7ff; align-self:flex-end; border-radius:12px 12px 0 12px; padding:12px; }
+.message-card.assistant .mc-body { background:white; border-radius:12px 12px 12px 0; padding:12px; box-shadow:0 1px 3px rgba(0,0,0,0.04); }
+.mc-text { white-space:pre-wrap; font-size:14px; color:#0b2a3a; }
+.kw { background:#ffe8e6; color:#8b0000; padding:2px 4px; border-radius:4px; font-weight:600; }
+.mc-source { margin-top:8px; display:flex; gap:12px; align-items:center; }
+.pdf-link { text-decoration:none; color:#007bff; }
+.meta { font-size:12px; color:#65748b; }
+.mc-context { margin-top:8px; }
+.mc-context-list .ctx { background:#f6f8fa; padding:8px; border-radius:6px; overflow:auto; max-height:180px; }
+.mc-actions { margin-top:10px; display:flex; gap:8px; }
+.btn.small { padding:6px 8px; }
