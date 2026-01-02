@@ -1,9 +1,5 @@
-// src/components/MessageCard.tsx
 import React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import { ChatMessage } from "../types";
-import "./MessageCard.css";
 
 interface Props {
   msg: ChatMessage;
@@ -11,19 +7,28 @@ interface Props {
 
 const MessageCard: React.FC<Props> = ({ msg }) => {
   return (
-    <div className={`msg ${msg.role === "user" ? "user" : "bot"}`}>
-      {msg.role === "assistant" ? (
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {msg.content}
-        </ReactMarkdown>
-      ) : (
-        <span>{msg.content}</span>
+    <div className={`message ${msg.role}`}>
+      <p>{msg.content}</p>
+
+      {/* ✅ EXACT SDS PARAGRAPH */}
+      {msg.highlightedText && (
+        <details>
+          <summary>🔍 View exact SDS paragraph</summary>
+          <pre>{msg.highlightedText}</pre>
+        </details>
       )}
 
-      {msg.source_file && (
-        <div className="msg-source">
-          📄 {msg.source_file}
-          {msg.section && ` · Section ${msg.section}`}
+      {/* ✅ SOURCE */}
+      {msg.source && (
+        <div className="source">
+          📄 <strong>Source:</strong> {msg.source}
+        </div>
+      )}
+
+      {/* ✅ CONFIDENCE */}
+      {msg.confidence && (
+        <div className="confidence">
+          🔎 Confidence: {msg.confidence}/10
         </div>
       )}
     </div>

@@ -1,116 +1,85 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { ChatMessage } from "../types";
-import { postQuery } from "../api";
+import MessageCard from "./MessageCard";
 import "./ChatView.css";
 
-interface Props {
-  conversations: ChatMessage[][];
-  selectedConversation: number | null;
-  setConversations: React.Dispatch<React.SetStateAction<ChatMessage[][]>>;
-}
+const API_URL = "http://127.0.0.1:8000/query";
 
-const ChatView: React.FC<Props> = ({
-  conversations,
-  selectedConversation,
-  setConversations,
-}) => {
+const ChatView: React.FC = () => {
+  const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-  const [strict, setStrict] = useState(false);
-
-  const bottomRef = useRef<HTMLDivElement | null>(null);
-
-  const messages =
-    selectedConversation !== null
-      ? conversations[selectedConversation] || []
-      : [];
-
-  // ✅ Auto-scroll like ChatGPT
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [conversations, selectedConversation]);
-
-  
 
   const sendMessage = async () => {
-  if (!input.trim() || loading) return;
+    if (!input.trim()) return;
 
-  let convoIndex = selectedConversation;
-
-  // ✅ Auto-create conversation if none selected
-  if (convoIndex === null) {
-    setConversations(prev => [...prev, []]);
-    convoIndex = conversations.length;
-  }
-
-  const userMsg: ChatMessage = {
-    id: crypto.randomUUID(),
-    role: "user",
-    content: input,
-    createdAt: new Date().toISOString(),
-  };
-
-  setConversations(prev => {
-    const next = [...prev];
-    next[convoIndex!] = [...(next[convoIndex!] || []), userMsg];
-    return next;
-  });
-
-  setInput("");
-  setLoading(true);
-
-  try {
-    const res = await postQuery(input, 5, strict);
-
-    const botMsg: ChatMessage = {
-      id: crypto.randomUUID(),
-      role: "assistant",
-      content: res.answer || "No answer found",
-      createdAt: new Date().toISOString(),
+    const userMsg: ChatMessage = {
+      role: "user",
+      content: input,
     };
 
-    setConversations(prev => {
-      const next = [...prev];
-      next[convoIndex!] = [...next[convoIndex!], botMsg];
-      return next;
-    });
-  } finally {
-    setLoading(false);
-  }
-};
+    setMessages((prev) => [...prev, userMsg]);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question: input }),
+      });
+
+      if (!res.ok) {
+        const text = await res.text();
+        console.error("Backend error:", text);
+        throw new Error("Backend error");
+      }
+
+      const data = await res.json();
+
+      // 🔁 MAP backend snake_case → frontend camelCase
+      const botMsg: ChatMessage = {
+        role: "assistant",
+        content: data.answer || "Not found in SDS.",
+        confidence: data.confidence,
+        source: data.source,
+        highlightedText: data.highlighted_text,
+      };
+
+      setMessages((prev) => [...prev, botMsg]);
+    } catch (err) {
+      console.error(err);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "⚠️ Unable to reach SDS server.",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <div className="chat-root">
+    <div className="chat-container">
       <div className="chat-messages">
-        {messages.map(m => (
-          <div key={m.id} className={`bubble ${m.role}`}>
-            {m.content}
-          </div>
+        {messages.map((msg, i) => (
+          <MessageCard key={i} msg={msg} />
         ))}
-        <div ref={bottomRef} />
+        {loading && <div className="typing">Analyzing SDS…</div>}
       </div>
 
-      <div className="chat-input-wrapper">
-        <label className="strict">
-          <input
-            type="checkbox"
-            checked={strict}
-            onChange={e => setStrict(e.target.checked)}
-          />
-          STRICT
-        </label>
-
-        <div className="chat-input-box">
-          <input
-            value={input}
-            onChange={e => setInput(e.target.value)}
-            onKeyDown={e => e.key === "Enter" && sendMessage()}
-            placeholder="Ask about SDS (e.g. First aid measures)"
-          />
-          <button onClick={sendMessage} disabled={loading}>
-            Send
-          </button>
-        </div>
+      <div className="chat-input">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+          placeholder="Ask an SDS question..."
+        />
+        <button onClick={sendMessage}>Send</button>
       </div>
     </div>
   );
