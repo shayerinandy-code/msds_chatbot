@@ -1,20 +1,25 @@
-# retriever.py
+import chromadb
+from chromadb.config import Settings
+from config import CHROMA_DB_DIR
 
-from langchain_chroma import Chroma
-from langchain_openai import OpenAIEmbeddings
+client = chromadb.Client(
+    Settings(
+        persist_directory=CHROMA_DB_DIR,
+        anonymized_telemetry=False
+    )
+)
 
-PERSIST_DIR = "./chroma"
+collection = client.get_or_create_collection(name="sds_docs")
 
-def retrieve_sds(query: str, product: str):
-    db = Chroma(
-        persist_directory=PERSIST_DIR,
-        embedding_function=OpenAIEmbeddings()
+
+def retrieve_chunks(query: str, k: int = 8):
+    result = collection.query(
+        query_texts=[query],
+        n_results=k
     )
 
-    docs = db.similarity_search(
-        query,
-        k=5,
-        filter={"product": product}
-    )
+    if not result or not result.get("documents"):
+        return []
 
-    return docs
+    documents = result["documents"][0]
+    return documents

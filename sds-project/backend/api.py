@@ -1,40 +1,46 @@
+# api.py
 from fastapi import FastAPI
 from pydantic import BaseModel
-import chromadb
-from chromadb.utils import embedding_functions
+from rag_engine import answer_question
 
-app = FastAPI()
-
-CHROMA_DIR = "chroma"   # ✅ SAME FOLDER
-COLLECTION_NAME = "sds_collection"
-
-embedding_function = embedding_functions.DefaultEmbeddingFunction()
-
-client = chromadb.Client(
-    chromadb.config.Settings(
-        persist_directory=CHROMA_DIR,
-        anonymized_telemetry=False
-    )
-)
-
-collection = client.get_or_create_collection(
-    name=COLLECTION_NAME,
-    embedding_function=embedding_function
-)
+app = FastAPI(title="SDS Query API")
 
 class QueryRequest(BaseModel):
-    query: str
-    product: str | None = None
+    question: str
 
-@app.post("/api/v1/query")
-def query_sds(req: QueryRequest):
-    results = collection.query(
-        query_texts=[req.query],
-        n_results=5
-    )
+class QueryResponse(BaseModel):
+    answer: str
+    confidence: float
+    source: str
 
-    if not results["documents"] or not results["documents"][0]:
-        return {"answer": "No relevant information found in SDS documents."}
+@app.post("/query", response_model=QueryResponse)
+def query_sds_api(req: QueryRequest):
+    result = answer_question(req.question)
 
-    answer = "\n\n".join(results["documents"][0])
-    return {"answer": answer}
+    if result is None:
+        return {
+            "answer": "No exact answer found in SDS documents.",
+            "confidence": 0.0,
+            "source": "N/A"
+        }
+
+    # result is already formatted text → parse it
+    lines = result.splitlines()
+
+    answer = []
+    confidence = 0.0
+    source = ""
+
+    for line in lines:
+        if line.startswith("Confidence:"):
+            confidence = float(line.replace("Confidence:", "").strip())
+        elif line.startswith("Source:"):
+            source = line.replace("Source:", "").strip()
+        else:
+            answer.append(line)
+
+    return {
+        "answer": "\n".join(answer).strip(),
+        "confidence": confidence,
+        "source": source
+    }

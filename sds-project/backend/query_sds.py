@@ -1,34 +1,29 @@
-import requests
+# query_sds.py
+import chromadb
+from chromadb.utils import embedding_functions
 
-FASTAPI_URL = "http://localhost:8000/api/v1/query"
-PRODUCT = "ESPL-30-Seconds-Nzl-En-090625-1"  # Example product
+CHROMA_PATH = "chroma_db"
+COLLECTION_NAME = "sds_documents"
 
-print("SDS Query System Ready. Type exit to quit.\n")
+embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
+    model_name="all-MiniLM-L6-v2"
+)
 
-while True:
-    question = input("Enter your SDS question: ")
+def query_sds(query: str, n_results: int = 5):
+    client = chromadb.PersistentClient(path=CHROMA_PATH)
 
-    if question.lower().strip() in ["exit", "quit"]:
-        break
+    collection = client.get_collection(
+        name=COLLECTION_NAME,
+        embedding_function=embedding_function
+    )
 
-    payload = {
-        "query": question,
-        "product": PRODUCT
-    }
+    results = collection.query(
+        query_texts=[query],
+        n_results=n_results
+    )
 
-    try:
-        response = requests.post(FASTAPI_URL, json=payload)
-        if response.status_code != 200:
-            print("❌ Error:", response.text)
-            continue
+    documents = results["documents"][0]
+    metadatas = results["metadatas"][0]
 
-        data = response.json()
-        print("\nAnswer:\n")
-        print(f"Query: {data.get('query')}")
-        print(f"Answer: {data.get('answer')}")
-        print(f"Confidence: {data.get('confidence')}")
-        print(f"Recommended Action: {data.get('recommended_action')}")
-        print("\n---\n")
-
-    except Exception as e:
-        print("❌ Exception:", e)
+    # 🔒 ONLY RETURN WHAT RAG EXPECTS
+    return documents, metadatas

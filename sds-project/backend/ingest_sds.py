@@ -1,58 +1,40 @@
-import os
-from PyPDF2 import PdfReader
+# ingest_sds.py
 import chromadb
+from chromadb.config import Settings
 from chromadb.utils import embedding_functions
+from load_sds_pdf import load_and_split_pdfs
 
-PDF_DIR = "sds_pdf"
-CHROMA_DIR = "chroma"
-COLLECTION_NAME = "sds_collection"
+CHROMA_PATH = "chroma_db"
+COLLECTION_NAME = "sds_documents"
 
-embedding_function = embedding_functions.DefaultEmbeddingFunction()
+def ingest_pdfs():
+    print("📥 Loading and splitting PDFs...")
+    docs = load_and_split_pdfs()
 
-client = chromadb.Client(
-    chromadb.config.Settings(
-        persist_directory=CHROMA_DIR,
-        anonymized_telemetry=False
+    embedding_function = embedding_functions.SentenceTransformerEmbeddingFunction(
+        model_name="all-MiniLM-L6-v2"
     )
-)
 
-collection = client.get_or_create_collection(
-    name=COLLECTION_NAME,
-    embedding_function=embedding_function
-)
+    client = chromadb.PersistentClient(path=CHROMA_PATH)
 
-def extract_text(pdf_path):
-    reader = PdfReader(pdf_path)
-    text = ""
-    for page in reader.pages:
-        text += page.extract_text() or ""
-    return text
+    collection = client.get_or_create_collection(
+        name=COLLECTION_NAME,
+        embedding_function=embedding_function
+    )
 
-def chunk_text(text, chunk_size=800):
-    words = text.split()
-    for i in range(0, len(words), chunk_size):
-        yield " ".join(words[i:i + chunk_size])
+    texts = [d.page_content for d in docs]
+    metadatas = [d.metadata for d in docs]
+    ids = [f"doc_{i}" for i in range(len(docs))]
 
-def ingest_all_pdfs():
-    total = 0
-    for file in os.listdir(PDF_DIR):
-        if not file.lower().endswith(".pdf"):
-            continue
+    print("📦 Storing embeddings in ChromaDB...")
+    collection.add(
+        documents=texts,
+        metadatas=metadatas,
+        ids=ids
+    )
 
-        product = os.path.splitext(file)[0]
-        text = extract_text(os.path.join(PDF_DIR, file))
-
-        for i, chunk in enumerate(chunk_text(text)):
-            collection.add(
-                documents=[chunk],
-                metadatas=[{"product": product}],
-                ids=[f"{product}_{i}"]
-            )
-            total += 1
-
-        print(f"✅ Ingested: {product}")
-
-    print(f"\n🎉 Total chunks added: {total}")
+    print("✅ Ingestion completed successfully!")
+    print(f"📚 Collection name: {COLLECTION_NAME}")
 
 if __name__ == "__main__":
-    ingest_all_pdfs()
+    ingest_pdfs()

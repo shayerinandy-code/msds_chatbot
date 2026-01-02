@@ -1,10 +1,8 @@
+import os
 import chromadb
-from chromadb.utils import embedding_functions
 
-CHROMA_DIR = "chroma"          # ✅ MUST match ingest_sds.py & api.py
-COLLECTION_NAME = "sds_collection"
-
-embedding_function = embedding_functions.DefaultEmbeddingFunction()
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CHROMA_DIR = os.path.join(BASE_DIR, "chroma_db")
 
 client = chromadb.Client(
     chromadb.config.Settings(
@@ -13,10 +11,7 @@ client = chromadb.Client(
     )
 )
 
-collection = client.get_or_create_collection(
-    name=COLLECTION_NAME,
-    embedding_function=embedding_function
-)
+collection = client.get_or_create_collection("sds_collection")
 
-count = collection.count()
-print(f"Total documents: {count}")
+data = collection.get()
+print("Total documents:", len(data["ids"]))

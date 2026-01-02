@@ -1,31 +1,50 @@
-import chromadb
+from query_sds import query_sds
+from confidence import calculate_confidence
 
-# Persistent Chroma client
-client = chromadb.Client(
-    chromadb.config.Settings(
-        persist_directory="./chroma_db"
-    )
-)
 
-collection = client.get_or_create_collection(
-    name="sds_collection"
-)
-
-def get_sds_answer(query: str, product: str):
+def answer_question(question: str):
     """
-    Returns EXACT SDS TEXT — NO MODIFICATION
+    Answers SDS questions using ONLY text retrieved from ChromaDB.
+    NO summarization. NO paraphrasing. Compliance-safe.
     """
 
-    results = collection.query(
-        query_texts=[query],
-        n_results=3,
-        where={"product": product}
+    # 1️⃣ Retrieve documents from ChromaDB
+    documents, metadatas = query_sds(question, n_results=5)
+
+    if not documents:
+        return {
+            "answer": "Not found in SDS.",
+            "confidence": 5.0,
+            "source": "",
+            "highlighted_text": ""
+        }
+
+    # 2️⃣ Pick the most relevant chunk (top result)
+    best_text = documents[0].strip()
+    best_meta = metadatas[0]
+
+    if not best_text:
+        return {
+            "answer": "Not found in SDS.",
+            "confidence": 5.0,
+            "source": "",
+            "highlighted_text": ""
+        }
+
+    # 3️⃣ Calculate confidence (STRICT SDS MODE)
+    confidence = calculate_confidence(
+        question=question,
+        answer=best_text,
+        mode="strict"
     )
 
-    if not results or not results.get("documents"):
-        return None, 0
+    # 4️⃣ Build source string
+    source = f"{best_meta.get('source')} (Page {best_meta.get('page')})"
 
-    # TAKE TOP MATCH — EXACT RAW TEXT
-    exact_text = results["documents"][0][0]
-
-    return exact_text, 9
+    # 5️⃣ FINAL RESPONSE (EXACT TEXT FROM PDF)
+    return {
+        "answer": best_text,
+        "confidence": confidence,
+        "source": source,
+        "highlighted_text": best_text
+    }

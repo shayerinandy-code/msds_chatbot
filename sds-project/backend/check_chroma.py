@@ -1,11 +1,11 @@
-from langchain_chroma import Chroma
-from langchain_openai import OpenAIEmbeddings
+# check_chroma.py
 
-PERSIST_DIR = "./chroma"
+import chromadb
 
-db = Chroma(
-    persist_directory=PERSIST_DIR,
-    embedding_function=OpenAIEmbeddings()
-)
+client = chromadb.PersistentClient(path="chroma_db")
 
-print("Total documents:", db._collection.count())
+collections = client.list_collections()
+
+print("Available collections:")
+for c in collections:
+    print("-", c.name)

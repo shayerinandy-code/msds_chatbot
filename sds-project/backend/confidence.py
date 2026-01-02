@@ -1,25 +1,15 @@
-from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage
-from config import OPENAI_MODEL
+# confidence.py
+def calculate_confidence(question: str, answer: str, mode="exact"):
+    if not answer:
+        return 0.0
 
-llm = ChatOpenAI(model=OPENAI_MODEL, temperature=0)
+    if mode == "exact":
+        return 9.5
 
-CONFIDENCE_PROMPT = """
-Rate confidence (0-10) that the provided SDS text
-DIRECTLY answers the user's question.
+    q_words = set(question.lower().split())
+    a_words = set(answer.lower().split())
 
-Rules:
-- 9–10: Exact match
-- 7–8: Good match
-- 6: Needs review
-- Below 6: No solid answer
+    overlap = len(q_words & a_words)
+    ratio = overlap / max(len(q_words), 1)
 
-Return ONLY a number.
-"""
-
-def score_confidence(query: str, sds_text: str) -> int:
-    response = llm.invoke([
-        HumanMessage(content=CONFIDENCE_PROMPT),
-        HumanMessage(content=f"Question:\n{query}\n\nSDS Text:\n{sds_text}")
-    ])
-    return int(response.content.strip())
+    return round(min(8.0, max(5.0, ratio * 10)), 1)

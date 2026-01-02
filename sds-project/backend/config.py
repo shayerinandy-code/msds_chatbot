@@ -1,7 +1,13 @@
-OPENAI_MODEL = "gpt-4o-mini"
-EMBEDDING_MODEL = "text-embedding-3-small"
+import os
 
-CHROMA_DIR = "./chroma_db"
+# Base directory (backend folder)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# PDF folder name (DO NOT CHANGE the folder name)
+PDF_FOLDER = os.path.join(BASE_DIR, "sds_pdf")
+
+# Chroma DB directory
+CHROMA_DB_DIR = os.path.join(BASE_DIR, "chroma_db")
+
+# Chroma collection name
 COLLECTION_NAME = "sds_documents"
-
-MIN_CONFIDENCE = 7
